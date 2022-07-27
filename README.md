@@ -10,5 +10,5 @@ This project is an effort towards higher accuracy and more robustness to varying
 | Item | Link |
 | :------- | :-------: |
 | 10,000-image-dataset scrapped from Google | [Dataset](https://drive.google.com/drive/folders/1bhrgY8RcUFuD675oxcSLJkmtxY3Wxfg9?usp=sharing) |
-| Web dashboard for drivers | [Dashboard](https://webtech-lab-jominjose.000webhostapp.com/sleepywheels/dashboard.php) |
+| Web dashboard for drivers | [Dashboard](http://jominjose.42web.io/dashboard.php) |
 | Live demo of the system | [Demo](https://www.youtube.com/watch?v=KaCROQi2XRs) |
