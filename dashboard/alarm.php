@@ -9,9 +9,9 @@
 <body>
     <?php 
         //Connect with database
-        $con = mysqli_connect('localhost', 'id15892287_jomin', 'phpMyAdmin85!', 'id15892287_sleepywheels');
+        $con = mysqli_connect('{hostname}', '{username}', '{password}', '{database}');
         //Create query
-        $query = "insert into alarms(alarm) values('ALARM')";
+        $query = "insert into alarms(alarm) values()";
         //Execute query
         $result = mysqli_query($con, $query);
     ?>

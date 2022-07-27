@@ -4,52 +4,54 @@ body {
 }
 
 body {
-  zoom: 120%;
-  background: url(simple.jpg) repeat-y;
+  background-image: url(simple.jpg);
   background-size: 100vw 100vh;
   background-position: fixed;
   text-align: center;
-  font-family: Segoe UI;
-  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-size: 2.75vh;
 }
 
 .top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: rgba(255, 255, 255, 50%);
-  border-radius: 50px;
-  font-size: 78px;
+  border-radius: 5vh;
+  font-size: 8vh;
   font-weight: 700;
-  padding: 10px 35px 15px;
+  padding: 1vh 35px 2vh;
 
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 5vh;
+  left: 5vh;
 }
 
 .tables {
   position: absolute;
-  top: 50px;
-  right: 50px;
-  height: 270px;
-  width: 550px;
+  top: 6vh;
+  right: 0;
+  height: 42vh;
+  width: 43vw;
   overflow: scroll;
 }
 
 hr {
   position: absolute;
-  top: 326px;
-  right: 130px;
+  top: 50vh;
+  right: 8vw;
   border: none;
   border-bottom: 5px solid rgba(255, 255, 255, 50%);
-  border-radius: 10px;
-  width: 400px;
+  border-radius: 1vh;
+  width: 26vw;
 }
 
 .tips {
   position: absolute;
-  bottom: 20px;
-  right: 50px;
-  height: 270px;
-  width: 550px;
+  right: 2vw;
+  bottom: 4vh;
+  height: 42vh;
+  width: 39.5vw;
   overflow: scroll;
 }
 

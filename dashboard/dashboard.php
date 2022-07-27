@@ -11,7 +11,7 @@
 <body>
     <?php
         //Connect with database
-        $con = mysqli_connect('localhost', 'id15892287_jomin', 'phpMyAdmin85!', 'id15892287_sleepywheels');
+        $con = mysqli_connect('{hostname}', '{username}', '{password}', '{database}');
         //Create query
         $alarm_query = "select * from alarms order by timestamp desc";
         $yawn_query = "select * from yawns order by timestamp desc";
@@ -49,7 +49,7 @@
 
         function entry($timestamp) {
             echo "<div>".substr($timestamp, 0, 4)."</div>";
-            echo "<div>".substr($timestamp, 8, 2).' '.month(substr($timestamp, 5, 2))."</div>";
+            echo "<div>".month(substr($timestamp, 5, 2)).' '.substr($timestamp, 8, 2)."</div>";
             echo "<div>".substr($timestamp, 11)."</div>";
         }
     ?>
@@ -68,7 +68,7 @@
 
                     while($row = mysqli_fetch_array($alarm_result))
                     {
-                    entry($row['timestamp']);
+                        entry($row['timestamp']);
                     }
                 }
             ?>
