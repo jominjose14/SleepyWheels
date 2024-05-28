@@ -5,7 +5,7 @@ This project is an effort towards higher accuracy and more robustness to various
 * an EfficientNetV2B0 CNN model that outputs the probability of the driver being sleepy
 * a FaceMesh landmark detector (from Google's Mediapipe library) that enables calculation of aspect ratios of eyes and mouth
 * an alarm that gets triggered if the driver is sleepy
-* a web dashboard that can be visited later to check alarm and yawn timestamps from previous journies
+* a web dashboard that can be visited later to check alarm and yawn timestamps from previous journeys
 
 | Item | Link |
 | :------- | :-------: |
