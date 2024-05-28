@@ -11,7 +11,7 @@
         //Connect with database
         $con = mysqli_connect('{hostname}', '{username}', '{password}', '{database}');
         //Create query
-        $query = "insert into yawns(yawn) values()";
+        $query = "insert into yawns values()";
         //Execute query
         $result = mysqli_query($con, $query);
     ?>

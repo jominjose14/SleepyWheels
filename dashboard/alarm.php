@@ -11,7 +11,7 @@
         //Connect with database
         $con = mysqli_connect('{hostname}', '{username}', '{password}', '{database}');
         //Create query
-        $query = "insert into alarms(alarm) values()";
+        $query = "insert into alarms values()";
         //Execute query
         $result = mysqli_query($con, $query);
     ?>
