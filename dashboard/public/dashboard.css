@@ -1,0 +1,123 @@
+html,
+body {
+  margin: 0;
+}
+
+* {
+  --white-backdrop: rgba(255, 255, 255, 50%);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  font-size: 2.75vmin;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--white-backdrop);
+  border-radius: 5vh;
+  font-size: 8vh;
+  font-weight: 700;
+  padding: 1vh 35px 2vh;
+  position: absolute;
+  top: 5vh;
+  left: 5vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+  position: absolute;
+  top: 4.5vh;
+  right: 2vw;
+  height: 91vh;
+  width: 39vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding-right: 2vmin;
+}
+
+.section-header {
+  background: var(--white-backdrop);
+  width: 30%;
+  border-radius: 5vmin;
+  margin: 0 auto 1.5vmin;
+  padding: 0.5vmin 1vmin 0.8vmin;
+}
+
+.note {
+  font-size: 1.75vmin;
+  margin-top: -1vmin;
+}
+
+*::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  width: 1vmin;
+}
+
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-track {
+  background: var(--white-backdrop);
+  border-radius: 0.5vmin;
+}
+
+*::-webkit-scrollbar-thumb {
+  cursor: grab;
+  background: #ccc;
+  border-radius: 0.5vmin;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+.table-container {
+  background: rgba(255, 255, 255, 40%);
+  border-radius: 3.5vmin;
+  margin: auto;
+  padding: 2.25vmin 1vmin 2.75vmin;
+}
+
+.table-header,
+.table-rows {
+  width: 95%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 0.1vmin;
+  row-gap: 0.1vmin;
+}
+
+.table-rows {
+  max-height: 20vh;
+  overflow-y: auto;
+  padding-right: 0.125vmin;
+}
+
+.table .heading {
+  font-weight: bold;
+}
+
+.tip-list {
+  background: rgba(255, 255, 255, 40%);
+  border-radius: 30px;
+  margin: auto;
+  padding: 30px;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+ul {
+  width: 90%;
+  margin: auto;
+}
