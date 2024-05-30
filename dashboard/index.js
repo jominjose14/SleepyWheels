@@ -1,15 +1,21 @@
 import dotenv from "dotenv";
 import express from "express";
+import path from "path";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 import { createClient } from "@supabase/supabase-js";
 
 dotenv.config();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => res.redirect("/dashboard.html"));
 
@@ -103,5 +109,7 @@ app.all("*", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log("Listening at port " + PORT);
+  console.log(`Listening at port ${PORT}`);
 });
+
+export default app;

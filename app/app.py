@@ -26,7 +26,7 @@ left_eye_coordinates = [[263, 362], [387, 373], [386, 374], [385, 380]]
 mouth_coordinates = [[61, 291], [39, 181], [0, 17], [269, 405]]
 
 # Base url of web api that receives requests and updates the database when an alarm or a yawn is detected
-BASE_URL = 'http://jominjose.42web.io'
+BASE_URL = 'https://sleepywheels.vercel.app'
 
 # color for drawing on video frame
 COLOR = (0, 160, 0)
@@ -67,7 +67,7 @@ def distance(point1, point2):
     return (((point1[:2] - point2[:2])**2).sum())**0.5
 
 def record_alarm():
-    url = BASE_URL + '/alarm.php'
+    url = BASE_URL + '/alarm'
 
     # try:
     #     resp = req.post(url, timeout=5)
@@ -78,7 +78,7 @@ def record_alarm():
     #     return
         
 def record_yawn():
-    url = BASE_URL + '/yawn.php'
+    url = BASE_URL + '/yawn'
 
     # try:
     #     resp = req.post(url, timeout=5)
@@ -89,7 +89,7 @@ def record_yawn():
     #     return
         
 def sound_alarm(path):
-    # playsound.playsound(path)
+    playsound.playsound(path)
     record_alarm()
     
 # returns True if CNN classifies video frame as sleepy
