@@ -17,9 +17,9 @@ This project is an effort towards higher accuracy and more robustness to various
 | Download the trained model                | [Model](https://drive.google.com/file/d/1IEohZ-2uFnPpOMblCZ516eTCe8wnnpwQ/view?usp=share_link)  |
 | Research Paper link                       |               [Paper](https://jai.front-sci.com/index.php/jai/article/view/1117)                |
 
-#### Versions used
+#### To run the system locally
 
-| Item       | Version |
-| :--------- | :-----: |
-| python     |   3.9   |
-| tensorflow | 2.12.0  |
+1) Install python version 3.9
+2) Create a new python virtual environment and activate it
+3) `pip install -r requirements.txt`
+4) `python ./app/app.py`
