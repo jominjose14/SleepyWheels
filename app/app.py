@@ -216,7 +216,7 @@ def landmark_detector_check(frame):
 print("[INFO] Starting video stream thread...")
 
 # Webcam
-# cap = cv2.VideoCapture(0)
+# capture = cv2.VideoCapture(0)
 
 # Video file
 video_file_path = '/home/user/Videos/video.mp4'
