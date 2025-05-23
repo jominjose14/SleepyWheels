@@ -13,6 +13,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_KEY;
+const TABLE_PREFIX = "sleepywheels-";
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 app.use(express.static(path.join(__dirname, "public")));
@@ -20,96 +21,96 @@ app.use(express.static(path.join(__dirname, "public")));
 app.get("/", (req, res) => res.redirect("/dashboard.html"));
 
 app.get("/alarm", async (req, res) => {
-  let { data, error } = await supabase.from("alarms").select("*");
+    let { data, error } = await supabase.from(TABLE_PREFIX + "alarms").select("*");
 
-  if (error) {
-    const errorObj = {
-      status: "error",
-      message: "Failed to fetch alarm timestamps",
-    };
+    if (error) {
+        const errorObj = {
+            status: "error",
+            message: "Failed to fetch alarm timestamps",
+        };
 
-    res.status(500).send(errorObj);
-  } else {
-    const responseObj = {
-      status: "success",
-      data,
-    };
+        res.status(500).send(errorObj);
+    } else {
+        const responseObj = {
+            status: "success",
+            data,
+        };
 
-    res.status(200).send(responseObj);
-  }
+        res.status(200).send(responseObj);
+    }
 });
 
 app.post("/alarm", async (req, res) => {
-  const { error } = await supabase.from("alarms").insert({}); // database is configured to automatically store current timestamp in newly created row
+    const { error } = await supabase.from(TABLE_PREFIX + "alarms").insert({}); // database is configured to automatically store current timestamp in newly created row
 
-  if (error) {
-    const errorObj = {
-      status: "error",
-      message: "Failed to record alarm",
-    };
+    if (error) {
+        const errorObj = {
+            status: "error",
+            message: "Failed to record alarm",
+        };
 
-    res.status(500).send(errorObj);
-  } else {
-    const responseObj = {
-      status: "success",
-      message: "Recorded alarm successfully",
-    };
+        res.status(500).send(errorObj);
+    } else {
+        const responseObj = {
+            status: "success",
+            message: "Recorded alarm successfully",
+        };
 
-    res.status(200).send(responseObj);
-  }
+        res.status(200).send(responseObj);
+    }
 });
 
 app.get("/yawn", async (req, res) => {
-  let { data, error } = await supabase.from("yawns").select("*");
+    let { data, error } = await supabase.from(TABLE_PREFIX + "yawns").select("*");
 
-  if (error) {
-    const errorObj = {
-      status: "error",
-      message: "Failed to fetch yawn timestamps",
-    };
+    if (error) {
+        const errorObj = {
+            status: "error",
+            message: "Failed to fetch yawn timestamps",
+        };
 
-    res.status(500).send(errorObj);
-  } else {
-    const responseObj = {
-      status: "success",
-      data,
-    };
+        res.status(500).send(errorObj);
+    } else {
+        const responseObj = {
+            status: "success",
+            data,
+        };
 
-    res.status(200).send(responseObj);
-  }
+        res.status(200).send(responseObj);
+    }
 });
 
 app.post("/yawn", async (req, res) => {
-  const { error } = await supabase.from("yawns").insert({}); // database is configured to automatically store current timestamp in newly created row
+    const { error } = await supabase.from(TABLE_PREFIX + "yawns").insert({}); // database is configured to automatically store current timestamp in newly created row
 
-  if (error) {
-    const errorObj = {
-      status: "error",
-      message: "Failed to record yawn",
-    };
+    if (error) {
+        const errorObj = {
+            status: "error",
+            message: "Failed to record yawn",
+        };
 
-    res.status(500).send(errorObj);
-  } else {
-    const responseObj = {
-      status: "success",
-      message: "Recorded yawn successfully",
-    };
+        res.status(500).send(errorObj);
+    } else {
+        const responseObj = {
+            status: "success",
+            message: "Recorded yawn successfully",
+        };
 
-    res.status(200).send(responseObj);
-  }
+        res.status(200).send(responseObj);
+    }
 });
 
 app.all("*", (req, res) => {
-  const responseObj = {
-    status: "error",
-    message: "Invalid url",
-  };
+    const responseObj = {
+        status: "error",
+        message: "Invalid url",
+    };
 
-  res.status(404).send(responseObj);
+    res.status(404).send(responseObj);
 });
 
 app.listen(PORT, () => {
-  console.log(`Listening at port ${PORT}`);
+    console.log(`Listening at port ${PORT}`);
 });
 
 export default app;
